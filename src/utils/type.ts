@@ -26,3 +26,21 @@ export interface Showtime {
   name: string;
   id: number;
 }
+
+export interface Session {
+  id: number;
+  day: {
+    date: string;
+    id: number;
+    weekday: string;
+  };
+  movie: Movie;
+  name: string;
+  seats: Seat[];
+}
+
+export interface Seat {
+  id: number;
+  isAvailable: boolean;
+  name: string;
+}
