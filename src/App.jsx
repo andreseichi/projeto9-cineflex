@@ -12,7 +12,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="sessoes">
-          <Route path=":id" element={<Sessions />} />
+          <Route path=":idFilme" element={<Sessions />} />
         </Route>
       </Routes>
     </>

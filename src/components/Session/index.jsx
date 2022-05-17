@@ -1,9 +1,21 @@
-import { Container, Title } from './styles';
+import { Showtime } from './Showtime';
 
-export function Session() {
+import { Container, Day, Showtimes } from './styles';
+
+export function Session(props) {
   return (
     <Container>
-      <h3>Session</h3>
+      <Day>
+        <span>
+          {props.weekday} - {props.date}
+        </span>
+
+        <Showtimes>
+          {props.showtimes?.map((showtime) => (
+            <Showtime name={showtime.name} />
+          ))}
+        </Showtimes>
+      </Day>
     </Container>
   );
 }

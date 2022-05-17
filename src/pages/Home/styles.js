@@ -11,6 +11,7 @@ export const Container = styled.div`
 
 export const Title = styled.h2`
   font-size: 24px;
+  font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.04em;
   text-align: center;

@@ -2,20 +2,23 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   width: 100%;
-  min-height: 100vh;
+  margin-inline: 24px;
+`;
 
+export const Day = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
 `;
 
-export const Title = styled.h2`
-  font-size: 24px;
-  line-height: 28px;
-  letter-spacing: 0.04em;
-  text-align: center;
+export const Showtimes = styled.div`
+  margin: 20px 0 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 
-  color: #293845;
+  gap: 10px;
 
-  margin: 44px 0;
+  flex-wrap: wrap;
 `;

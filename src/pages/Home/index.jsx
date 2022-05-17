@@ -14,7 +14,6 @@ export function Home() {
     axios
       .get('https://mock-api.driven.com.br/api/v5/cineflex/movies')
       .then(({ data }) => {
-        console.log(data);
         setMovies(data);
       });
   }, []);
@@ -27,8 +26,8 @@ export function Home() {
 
       <Movies>
         {movies?.map((movie) => (
-          <Link to={`sessoes/${movie.id}`}>
-            <Movie url={movie.posterURL} title={movie.title} key={movie.title}>
+          <Link to={`sessoes/${movie.id}`} key={movie.title}>
+            <Movie url={movie.posterURL} title={movie.title}>
               {/* <h3>{movie.title}</h3>
             <span>{movie.releaseDate}</span>
             <img src={movie.posterURL} alt="" />
