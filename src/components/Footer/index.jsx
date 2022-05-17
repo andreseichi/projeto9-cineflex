@@ -16,7 +16,7 @@ export function Footer(props) {
       <SessionInfo>
         <MovieTitle>{props.title}</MovieTitle>
         <SessionDay>
-          {props.weekday} - {props.date}
+          {props.weekday} - {props.name}
         </SessionDay>
       </SessionInfo>
     </Container>
