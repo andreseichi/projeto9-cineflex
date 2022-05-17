@@ -4,6 +4,11 @@ export const Container = styled.footer`
   max-height: 120px;
   width: 100%;
 
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -26,12 +31,21 @@ export const Image = styled.div`
 
 export const SessionInfo = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   margin-left: 12px;
 `;
 
 export const MovieTitle = styled.h3`
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+
+  color: #293845;
+`;
+
+export const SessionDay = styled.span`
   font-weight: 400;
   font-size: 26px;
   line-height: 30px;

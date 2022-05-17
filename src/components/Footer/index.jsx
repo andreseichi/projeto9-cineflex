@@ -1,4 +1,10 @@
-import { Container, Image, SessionInfo, MovieTitle } from './styles';
+import {
+  Container,
+  Image,
+  SessionInfo,
+  MovieTitle,
+  SessionDay,
+} from './styles';
 
 export function Footer(props) {
   return (
@@ -9,6 +15,9 @@ export function Footer(props) {
 
       <SessionInfo>
         <MovieTitle>{props.title}</MovieTitle>
+        <SessionDay>
+          {props.weekday} - {props.date}
+        </SessionDay>
       </SessionInfo>
     </Container>
   );
