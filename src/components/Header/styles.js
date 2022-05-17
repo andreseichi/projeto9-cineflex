@@ -6,6 +6,9 @@ export const Container = styled.header`
   align-items: center;
   justify-content: center;
 
+  position: sticky;
+  top: 0;
+
   padding: 20px 0;
 
   background-color: #c3cfd9;
