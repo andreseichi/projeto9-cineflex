@@ -26,7 +26,7 @@ export function Home() {
 
       <Movies>
         {movies?.map((movie) => (
-          <Link to={`sessoes/${movie.id}`} key={movie.title}>
+          <Link to={`/sessoes/${movie.id}`} key={movie.title}>
             <Movie url={movie.posterURL} title={movie.title}>
               {/* <h3>{movie.title}</h3>
             <span>{movie.releaseDate}</span>

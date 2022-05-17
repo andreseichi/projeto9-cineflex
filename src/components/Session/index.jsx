@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { Showtime } from './Showtime';
 
 import { Container, Day, Showtimes } from './styles';
@@ -12,7 +14,9 @@ export function Session(props) {
 
         <Showtimes>
           {props.showtimes?.map((showtime) => (
-            <Showtime name={showtime.name} />
+            <Link to={`/assentos/${showtime.id}`} key={showtime.name}>
+              <Showtime name={showtime.name} />
+            </Link>
           ))}
         </Showtimes>
       </Day>
