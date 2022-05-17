@@ -5,6 +5,7 @@ import axios from 'axios';
 
 import { Header } from '../../components/Header';
 import { Session } from '../../components/Session';
+import { Footer } from '../../components/Footer';
 
 import { Container, Title, SessionsSection } from './styles';
 
@@ -39,6 +40,8 @@ export function Sessions() {
           />
         ))}
       </SessionsSection>
+
+      <Footer url={sessions.posterURL} title={sessions.title} />
     </Container>
   );
 }
