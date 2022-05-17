@@ -5,6 +5,7 @@ import { Header } from '../../components/Header';
 import { Movie } from '../../components/Movie';
 
 import { Container, Title, Movies } from './styles';
+import { Link } from 'react-router-dom';
 
 export function Home() {
   const [movies, setMovies] = useState([]);
@@ -26,12 +27,14 @@ export function Home() {
 
       <Movies>
         {movies?.map((movie) => (
-          <Movie url={movie.posterURL} title={movie.title} key={movie.title}>
-            {/* <h3>{movie.title}</h3>
+          <Link to={`sessoes/${movie.id}`}>
+            <Movie url={movie.posterURL} title={movie.title} key={movie.title}>
+              {/* <h3>{movie.title}</h3>
             <span>{movie.releaseDate}</span>
             <img src={movie.posterURL} alt="" />
             <span>{movie.overview}</span> */}
-          </Movie>
+            </Movie>
+          </Link>
         ))}
       </Movies>
     </Container>
