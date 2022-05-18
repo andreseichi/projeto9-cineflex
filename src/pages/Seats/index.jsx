@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -22,8 +22,10 @@ import {
 import { ContainerSelected as SeatSelected } from '../../components/Seat/styles';
 import { Button } from '../../components/Button';
 
-export function Seats() {
+export function Seats(props) {
   const { idSessao } = useParams();
+
+  const navigate = useNavigate();
 
   const [session, setSession] = useState({});
   const [seats, setSeats] = useState([]);
@@ -58,6 +60,38 @@ export function Seats() {
     newSeatsReserved.push(id);
 
     setSeatsReserved(newSeatsReserved);
+  }
+
+  function completeOrder(event) {
+    event.preventDefault();
+    if (name === '' || cpf === '' || seatsReserved.length === 0) {
+      return;
+    }
+
+    const request = {
+      ids: seatsReserved,
+      name,
+      cpf,
+    };
+
+    axios
+      .post(
+        'https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many',
+        request
+      )
+      .then((response) => {
+        if (response.status === 200) {
+          console.log('deu tudo certo');
+          const orderObject = {
+            ...request,
+            session,
+          };
+
+          props.testando(orderObject);
+
+          navigate('/sucesso');
+        }
+      });
   }
 
   return (
@@ -105,7 +139,6 @@ export function Seats() {
             onChange={(event) => setName(event.target.value)}
           />
         </FormInput>
-
         <FormInput>
           <FormLabel htmlFor="cpf">CPF do comprador</FormLabel>
           <Input
@@ -116,7 +149,7 @@ export function Seats() {
           />
         </FormInput>
 
-        <Button>Reservar assento(s)</Button>
+        <Button onClick={completeOrder}>Reservar assento(s)</Button>
       </Form>
 
       <Footer
