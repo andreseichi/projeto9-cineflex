@@ -13,9 +13,14 @@ import {
   SeatsSection,
   SeatsLabels,
   SeatsLabel,
+  Form,
+  FormInput,
+  FormLabel,
+  Input,
 } from './styles';
 
 import { ContainerSelected as SeatSelected } from '../../components/Seat/styles';
+import { Button } from '../../components/Button';
 
 export function Seats() {
   const { idSessao } = useParams();
@@ -23,6 +28,8 @@ export function Seats() {
   const [session, setSession] = useState({});
   const [seats, setSeats] = useState([]);
   const [seatsReserved, setSeatsReserved] = useState([]);
+  const [name, setName] = useState('');
+  const [cpf, setCpf] = useState('');
 
   useEffect(() => {
     axios
@@ -87,6 +94,30 @@ export function Seats() {
           <span>Indisponível</span>
         </SeatsLabel>
       </SeatsLabels>
+
+      <Form>
+        <FormInput>
+          <FormLabel htmlFor="name">Nome do comprador</FormLabel>
+          <Input
+            placeholder="Digite seu nome..."
+            id="name"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />
+        </FormInput>
+
+        <FormInput>
+          <FormLabel htmlFor="cpf">CPF do comprador</FormLabel>
+          <Input
+            placeholder="Digite seu CPF..."
+            id="cpf"
+            value={cpf}
+            onChange={(event) => setCpf(event.target.value)}
+          />
+        </FormInput>
+
+        <Button>Reservar assento(s)</Button>
+      </Form>
 
       <Footer
         url={session.movie?.posterURL}
