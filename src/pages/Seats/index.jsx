@@ -30,6 +30,7 @@ export function Seats(props) {
   const [session, setSession] = useState({});
   const [seats, setSeats] = useState([]);
   const [seatsReserved, setSeatsReserved] = useState([]);
+  const [seatsReservedName, setSeatsReservedName] = useState([]);
   const [name, setName] = useState('');
   const [cpf, setCpf] = useState('');
 
@@ -45,21 +46,28 @@ export function Seats(props) {
       });
   }, []);
 
-  function update(id) {
+  function update(id, name) {
     const newSeatsReserved = [...seatsReserved];
+    const newSeatsReservedName = [...seatsReservedName];
     const hasSeatReserved = newSeatsReserved.includes(id);
 
     if (hasSeatReserved) {
       const newSeatsReservedFiltered = newSeatsReserved.filter(
         (seatId) => seatId !== id
       );
+      const newSeatsReservedNameFiltered = newSeatsReservedName.filter(
+        (seatName) => seatName !== name
+      );
       setSeatsReserved(newSeatsReservedFiltered);
+      setSeatsReservedName(newSeatsReservedNameFiltered);
       return;
     }
 
     newSeatsReserved.push(id);
+    newSeatsReservedName.push(name);
 
     setSeatsReserved(newSeatsReserved);
+    setSeatsReservedName(newSeatsReservedName);
   }
 
   function completeOrder(event) {
@@ -85,9 +93,10 @@ export function Seats(props) {
           const orderObject = {
             ...request,
             session,
+            seatsReservedName,
           };
 
-          props.testando(orderObject);
+          props.getOrder(orderObject);
 
           navigate('/sucesso');
         }

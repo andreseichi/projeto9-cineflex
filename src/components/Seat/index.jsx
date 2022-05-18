@@ -20,7 +20,7 @@ export function Seat({ name, isAvailable, update, id }) {
           isSelected={isSelected}
           onClick={() => {
             handleClick();
-            isAvailable ? update(id) : handleNotAvailable();
+            isAvailable ? update(id, name) : handleNotAvailable();
           }}
         >
           {name}
@@ -31,7 +31,7 @@ export function Seat({ name, isAvailable, update, id }) {
           isSelected={isSelected}
           onClick={() => {
             handleClick();
-            isAvailable ? update(id) : handleNotAvailable();
+            isAvailable ? update(id, name) : handleNotAvailable();
           }}
         >
           {name}
