@@ -20,3 +20,23 @@ export const Container = styled.div`
 
   cursor: pointer;
 `;
+
+export const ContainerSelected = styled.div`
+  background: #8dd7cf;
+  border: 1px solid #45bdb0;
+  border-radius: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 26px;
+  height: 26px;
+
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.04em;
+  color: #000000;
+
+  cursor: pointer;
+`;
