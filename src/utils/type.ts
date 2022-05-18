@@ -44,3 +44,11 @@ export interface Seat {
   isAvailable: boolean;
   name: string;
 }
+
+export interface Order {
+  cpf: string;
+  name: string;
+  seatsReservedName: number[];
+  ids: number[];
+  session: Session;
+}
