@@ -66,6 +66,26 @@ export const SeatsLabel = styled.div`
   }
 `;
 
+export const SeatDisplay = styled.div`
+  background: ${({ backgroundColor }) => backgroundColor || '#C3CFD9'};
+  border: 1px solid ${({ border }) => border || '#7B8B99'};
+  border-radius: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 26px;
+  height: 26px;
+
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.04em;
+  color: #000000;
+
+  cursor: pointer;
+`;
+
 export const Form = styled.form`
   width: 100%;
   padding: 0 20px;

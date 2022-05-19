@@ -13,6 +13,7 @@ import {
   SeatsSection,
   SeatsLabels,
   SeatsLabel,
+  SeatDisplay,
   Form,
   FormInput,
   FormLabel,
@@ -123,17 +124,17 @@ export function Seats(props) {
 
       <SeatsLabels>
         <SeatsLabel>
-          <SeatSelected />
+          <SeatDisplay />
           <span>Selecionado</span>
         </SeatsLabel>
 
         <SeatsLabel>
-          <Seat isAvailable />
+          <SeatDisplay backgroundColor="#8DD7CF" border="#45BDB0" />
           <span>Disponível</span>
         </SeatsLabel>
 
         <SeatsLabel>
-          <Seat />
+          <SeatDisplay backgroundColor="#FBE192" border="#F7C52B" />
           <span>Indisponível</span>
         </SeatsLabel>
       </SeatsLabels>
