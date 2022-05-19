@@ -20,7 +20,6 @@ import {
   Input,
 } from './styles';
 
-import { ContainerSelected as SeatSelected } from '../../components/Seat/styles';
 import { Button } from '../../components/Button';
 
 export function Seats(props) {
@@ -45,7 +44,7 @@ export function Seats(props) {
         setSession(data);
         setSeats(data.seats);
       });
-  }, []);
+  }, [idSessao]);
 
   function update(id, name) {
     const newSeatsReserved = [...seatsReserved];
