@@ -123,12 +123,12 @@ export function Seats(props) {
 
       <SeatsLabels>
         <SeatsLabel>
-          <SeatDisplay />
+          <SeatDisplay backgroundColor="#8DD7CF" border="#45BDB0" />
           <span>Selecionado</span>
         </SeatsLabel>
 
         <SeatsLabel>
-          <SeatDisplay backgroundColor="#8DD7CF" border="#45BDB0" />
+          <SeatDisplay />
           <span>Disponível</span>
         </SeatsLabel>
 
