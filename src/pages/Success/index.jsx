@@ -55,7 +55,7 @@ export function Success(props) {
         </SessionDetails>
       </OrderSection>
 
-      <Button onClick={goHome}>Reservar assento(s)</Button>
+      <Button onClick={goHome}>Voltar pra Home</Button>
     </Container>
   );
 }
